@@ -2,7 +2,7 @@ package com.example.ListaExercicio;
 
 import java.util.Scanner;
 
-public class Main {
+public class Calculadora {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -22,12 +22,12 @@ public class Main {
         System.out.print("Digite o segundo número: ");
         double num2 = scanner.nextDouble();
 
-        double resultado = calcular(escolha, num1, num2);
+        String resultado = calcular(escolha, num1, num2);
 
         System.out.println("Resultado: " + resultado);
     }
 
-    public static double calcular(int escolha, double num1, double num2) {
+    public static String calcular(int escolha, double num1, double num2) {
         double resultado = 0;
 
         switch (escolha) {
@@ -44,13 +44,13 @@ public class Main {
                 if (num2 != 0) {
                     resultado = num1 / num2;
                 } else {
-                    System.out.println("Não é possível dividir por zero.");
+                    return "Não é possível dividir por zero.";
                 }
                 break;
             default:
-                System.out.println("Escolha inválida.");
+                return "Escolha inválida.";
         }
 
-        return resultado;
+        return Double.toString(resultado);
     }
 }
