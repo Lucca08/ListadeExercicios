@@ -9,11 +9,11 @@ public class Calculadora {
 
         System.out.println("Calculadora Simples");
         System.out.println("1. Soma");
-        System.out.println("2. Subtração");
-        System.out.println("3. Multiplicação");
-        System.out.println("4. Divisão");
+        System.out.println("2. Subtraçao");
+        System.out.println("3. Multiplicaçao");
+        System.out.println("4. Divisao");
 
-        System.out.print("Escolha a operação (1-4): ");
+        System.out.print("Escolha a operaçao (1-4): ");
         int escolha = scanner.nextInt();
 
         System.out.print("Digite o primeiro número: ");

@@ -28,4 +28,12 @@ public class FibonacciTest {
     public void testCalcularFibonacciParaVinte() {
         assertEquals(6765, Fibonacci.calcularFibonacci(20));
     }
+
+    //test para exercicio 9
+    @Test
+    public void testGerarSequenciaFibonacciAteNumero() {
+        assertEquals("", Fibonacci.gerarSequenciaFibonacciAteNumero(0));
+        assertEquals("0", Fibonacci.gerarSequenciaFibonacciAteNumero(1));
+        assertEquals("0 1 1 2 3 5 8 13 21", Fibonacci.gerarSequenciaFibonacciAteNumero(25));
+    }
 }
