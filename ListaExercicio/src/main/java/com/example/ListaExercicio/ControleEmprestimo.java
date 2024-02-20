@@ -14,7 +14,6 @@ public class ControleEmprestimo {
         System.out.println("Pessoa: " + emprestimo1.getPessoa().getNome());
         System.out.println("Data do empréstimo: " + emprestimo1.getDataEmprestimo());
 
-        // Simulando devolução do livro
         livro1.devolver();
 
         System.out.println("Livro devolvido. Disponível para novo empréstimo: " + livro1.isDisponivel());
