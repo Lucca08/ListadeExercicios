@@ -15,7 +15,7 @@ public class LerAte10 {
 
             while (!scanner.hasNextInt()) {
                 System.out.println("Entrada inválida. Digite um número.");
-                scanner.next(); // Consome o token inválido
+                scanner.next(); 
             }
 
             numero = scanner.nextInt();
