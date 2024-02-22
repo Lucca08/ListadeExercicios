@@ -12,6 +12,12 @@ public class Pedido {
     public ArrayList<Item> itens = new ArrayList<Item>();
     public double valorTotalDoPedido = 0;
 
+    private Logger LOGGER;
+
+    public void setLogger(Logger logger) {
+        this.LOGGER = logger;
+    }
+
     public void calcularValorTotal() {
         for (Item item : itens) {
             valorTotalDoPedido += item.getValorDoItem();
@@ -43,12 +49,10 @@ public class Pedido {
     
         System.out.println(pedidoStringBuilder.toString());
     }
-    
-    
 
     public void imprimeValorTotal() {
         calcularValorTotal();
-        logger.info("Valor total do pedido: R$ {}", valorTotalDoPedido);
+        System.out.println("Valor total do pedido: R$ " + valorTotalDoPedido);
     }
 
     public void adicionarItem() {

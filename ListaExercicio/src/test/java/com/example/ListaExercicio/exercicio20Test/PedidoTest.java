@@ -56,7 +56,6 @@ public class PedidoTest {
         assertArrayEquals(expectedLines, actualLines);
     }
     
-
     @Test
     void testImprimeValorTotal() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -68,6 +67,4 @@ public class PedidoTest {
         String expectedOutput = "Valor total do pedido: R$ 20.0";
         assertTrue(outContent.toString().contains(expectedOutput));
     }
-    
-
 }

@@ -22,11 +22,17 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.mockito:mockito-core:3.12.4'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+    implementation 'org.slf4j:slf4j-api:1.7.32'
+    implementation 'org.springframework.boot:spring-boot-starter-logging' 
+    implementation 'ch.qos.logback:logback-classic'
+    implementation('org.springframework.boot:spring-boot-starter')
+    implementation 'org.springframework.boot:spring-boot-dependencies:2.6.3'
 }
+
+
 
 tasks.named('test') {
 	useJUnitPlatform()
