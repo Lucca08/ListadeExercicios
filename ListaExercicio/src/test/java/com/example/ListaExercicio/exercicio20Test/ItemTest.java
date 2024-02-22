@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ItemTest {
 
-    private Item item;  // Mova o item para o nível da classe para torná-lo acessível em outros métodos
+    private Item item;  
 
     @BeforeEach
     void setUp() {
