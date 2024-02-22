@@ -1,9 +1,14 @@
 package com.example.ListaExercicio.exercicio20;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Scanner;
 
 public class Menu {
     private Estoque estoque;
     private Pedido pedido;
+    private static final Logger logger = LoggerFactory.getLogger(Menu.class);
 
     public Menu() {
         this.estoque = new Estoque();
@@ -15,11 +20,11 @@ public class Menu {
 
         int escolha;
         do {
-            System.out.println("===== Menu Principal =====");
-            System.out.println("1. Mostrar Estoque");
-            System.out.println("2. Fazer Pedido");
-            System.out.println("3. Sair");
-            System.out.print("Escolha uma opção: ");
+            logger.info("===== Menu Principal =====");
+            logger.info("1. Mostrar Estoque");
+            logger.info("2. Fazer Pedido");
+            logger.info("3. Sair");
+            logger.info("Escolha uma opção: ");
 
             escolha = scanner.nextInt();
             scanner.nextLine();
@@ -32,10 +37,10 @@ public class Menu {
                     fazerPedido();
                     break;
                 case 3:
-                    System.out.println("Saindo do programa.");
+                    logger.info("Saindo do programa.");
                     break;
                 default:
-                    System.out.println("Opção inválida. Tente novamente.");
+                    logger.info("Opção inválida. Tente novamente.");
             }
         } while (escolha != 3);
 
@@ -45,12 +50,12 @@ public class Menu {
     public void fazerPedido() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("===== Fazer Pedido =====");
+        logger.info("===== Fazer Pedido =====");
 
         while (true) {
-            System.out.print("Digite o ID do produto ou 0 para encerrar o pedido: ");
+            logger.info("Digite o ID do produto ou 0 para encerrar o pedido: ");
             int idProduto = scanner.nextInt();
-            scanner.nextLine(); 
+            scanner.nextLine();
 
             if (idProduto == 0) {
                 break;
@@ -59,22 +64,24 @@ public class Menu {
             Produto produto = estoque.encontrarProduto(idProduto);
 
             if (produto != null) {
-                System.out.print("Digite a quantidade desejada: ");
+                logger.info("Digite a quantidade desejada: ");
                 int quantidade = scanner.nextInt();
-                scanner.nextLine(); 
+                scanner.nextLine();
 
                 if (pedido.adicionarItemNaLista(produto, quantidade)) {
-                    System.out.println("Item adicionado ao pedido.");
+                    logger.info("Item adicionado ao pedido.");
                 } else {
-                    System.out.println("Quantidade indisponível no estoque.");
+                    logger.info("Quantidade indisponível no estoque.");
                 }
             } else {
-                System.out.println("Produto não encontrado no estoque.");
+                logger.info("Produto não encontrado no estoque.");
             }
         }
 
-        System.out.println("===== Resumo do Pedido =====");
+        logger.info("===== Resumo do Pedido =====");
         pedido.imprimirPedido();
+
+        scanner.close(); 
     }
 
     public void mostraEstoque() {

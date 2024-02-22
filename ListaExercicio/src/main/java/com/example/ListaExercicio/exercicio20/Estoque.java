@@ -2,6 +2,8 @@ package com.example.ListaExercicio.exercicio20;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Estoque {
     private int id = 1;
@@ -42,9 +44,9 @@ public class Estoque {
     }
 
     public void imprimeCatalogoDoEstoque() {
+        Logger logger = LoggerFactory.getLogger(Estoque.class);
         for (Produto produto : listaDeProdutos) {
-            System.out.println(produto.getId() + " - " + produto.getNome() + " - R$ " +
-                    produto.getPreco() + " - " + produto.getQuantidadeEmEstoque() + " unidades");
+            logger.info("{} - {} - R$ {} - {} unidades", produto.getId(), produto.getNome(), produto.getPreco(), produto.getQuantidadeEmEstoque());
         }
     }
 

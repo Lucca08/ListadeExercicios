@@ -1,7 +1,7 @@
 package com.example.ListaExercicio.exercicio20;
 
 public class Item {
-    Produto produto;
+    private Produto produto;
     private int quantidade;
     private double valorDoItem;
 
@@ -11,7 +11,7 @@ public class Item {
         this.valorDoItem = defineValorTotal();
     }
 
-    double defineValorTotal() {
+    public double defineValorTotal() {
         return produto.getPreco() * quantidade;
     }
 

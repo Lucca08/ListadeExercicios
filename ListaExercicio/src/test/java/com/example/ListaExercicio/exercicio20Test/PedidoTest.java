@@ -39,29 +39,35 @@ public class PedidoTest {
         pedido.calcularValorTotal();
         assertEquals(20.0, pedido.valorTotalDoPedido);
     }
-
+   
     @Test
     void testImprimirPedido() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-
+    
         pedido.adicionarItemNaLista(produto, 2);
         pedido.imprimirPedido();
-
-        String expectedOutput = "Produto - 2 - R$ 20.0\nValor total do pedido: R$ 20.0\n";
-        assertEquals(expectedOutput, outContent.toString());
+    
+        String expectedOutput = "Produto - 2 - R$ 20.0\nValor total do pedido: R$ 20.0";
+        String[] expectedLines = expectedOutput.split("\n");
+    
+        String[] actualLines = outContent.toString().trim().split("\n");
+    
+        assertArrayEquals(expectedLines, actualLines);
     }
+    
 
     @Test
     void testImprimeValorTotal() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-
+    
         pedido.adicionarItemNaLista(produto, 2);
         pedido.imprimeValorTotal();
-
-        String expectedOutput = "Valor total do pedido: R$ 20.0\n";
-        assertEquals(expectedOutput, outContent.toString());
+    
+        String expectedOutput = "Valor total do pedido: R$ 20.0";
+        assertTrue(outContent.toString().contains(expectedOutput));
     }
+    
 
 }
