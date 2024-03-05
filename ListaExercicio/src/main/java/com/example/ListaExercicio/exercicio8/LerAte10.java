@@ -1,36 +1,26 @@
 package com.example.ListaExercicio.exercicio8;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class LerAte10 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Logger logger = Logger.getLogger(LerAte10.class.getName());
 
-        int numero;
+        try (Scanner scanner = new Scanner(System.in)) {
+            int numero = 0;
+            int soma = 0;
+            int contador = 0;
 
-        System.out.println("Digite números até que você digite 10:");
-
-        try {
-            do {
-                System.out.print("Digite um número: ");
-
-                while (!scanner.hasNextInt()) {
-                    System.out.println("Entrada inválida. Digite um número.");
-                    scanner.next();
-                }
-
+            while (contador < 10) {
+                logger.info("Digite um numero: ");
                 numero = scanner.nextInt();
+                soma += numero;
+                contador++;
+            }
 
-                if (numero != 10) {
-                    System.out.println("Você digitou: " + numero);
-                }
-
-            } while (numero != 10);
-
-            System.out.println("Você digitou 10. Fim do programa.");
-        } finally {
-            scanner.close();
+            logger.info("A soma dos numeros digitados e: " + soma);
         }
     }
 }

@@ -8,18 +8,14 @@ public class Fibonacci {
     private static final Logger logger = LoggerFactory.getLogger(Fibonacci.class);
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        try {
-            logger.info("Digite um número não negativo para calcular a série de Fibonacci: ");
+            
+            try(Scanner scanner = new Scanner(System.in)) {
+            logger.info("Digite um numero: ");
             int numero = scanner.nextInt();
 
-            logger.info("Série de Fibonacci até o número {}: ", numero);
-            for (int i = 0; i <= numero; i++) {
-                System.out.print(calcularFibonacci(i) + " ");
-            }
-        } finally {
-            scanner.close();
+            String sequenciaFibonacci = gerarSequenciaFibonacciAteNumero(numero);
+
+            logger.info("Sequencia de Fibonaci ate {}: {}", numero, sequenciaFibonacci);
         }
     }
 

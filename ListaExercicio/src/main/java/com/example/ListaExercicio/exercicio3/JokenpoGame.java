@@ -25,13 +25,10 @@ public class JokenpoGame {
     public static String calcularResultado(Opcao jogador, Opcao maquina) {
         if (jogador == maquina) {
             return "Empate";
-        } else if(
-        (jogador == Opcao.PEDRA && maquina == Opcao.TESOURA) || 
-        (jogador == Opcao.PAPEL && maquina == Opcao.PEDRA) || 
-        (jogador == Opcao.TESOURA && maquina == Opcao.PAPEL))
-        {
+        } else if((jogador == Opcao.PEDRA && maquina == Opcao.TESOURA) ||  (jogador == Opcao.PAPEL && maquina == Opcao.PEDRA) || (jogador == Opcao.TESOURA && maquina == Opcao.PAPEL))
+        { 
             return "Jogador venceu";
-        } else {
+        } else { 
             return "Máquina venceu";
         }
     }

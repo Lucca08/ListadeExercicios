@@ -23,7 +23,6 @@ public class Produto {
         } else {
             valorTotal = (preco * quantidade) * 0.75; 
         }
-
         return valorTotal;
     }
     

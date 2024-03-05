@@ -13,7 +13,7 @@ public class NumerosAleatorios {
     }
 
     public String exibirNumeros(int[] numeros) {
-        StringBuilder resultado = new StringBuilder("Números aleatórios: ");
+        StringBuilder resultado = new StringBuilder("Numeros aleatorios: ");
         for (int numero : numeros) {
             resultado.append(numero).append(" ");
         }

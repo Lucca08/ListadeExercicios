@@ -29,12 +29,12 @@ public class Automovel {
     public void ligar() {
         this.ligado = true;
         Logger logger = LoggerFactory.getLogger(Automovel.class);
-        logger.info("O veículo está ligado.");
+        logger.info("O veiculo esta ligado");
     }
 
     public void desligar() {
         this.ligado = false;
         Logger logger = LoggerFactory.getLogger(Automovel.class);
-        logger.info("O veículo está desligado.");
+        logger.info("O veiculo esta desligado");
     }
 }

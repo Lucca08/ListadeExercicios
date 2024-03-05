@@ -21,7 +21,7 @@ public class CarroAutomatico extends Carro {
         if (freioPressionado) {
             super.ligar();
         } else {
-            logger.info("Pressione o freio para ligar o carro automático.");
+            logger.info("Pressione o freio para ligar o carro automatico");
         }
     }
 }

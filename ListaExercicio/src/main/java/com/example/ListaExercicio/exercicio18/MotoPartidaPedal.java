@@ -21,7 +21,7 @@ public class MotoPartidaPedal extends Moto{
         if (aceleradorPuxado) {
             super.ligar();
         } else {
-            logger.info("Puxe o acelerador para ligar a moto com partida a pedal.");
+            logger.info("Puxe o acelerador para ligar a moto com partida a pedal");
         }
     }
 }

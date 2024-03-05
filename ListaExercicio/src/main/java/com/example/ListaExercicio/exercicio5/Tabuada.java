@@ -1,15 +1,17 @@
 package com.example.ListaExercicio.exercicio5;
 
+import java.util.logging.Logger;
+
 public class Tabuada {
 
     public static void main(String[] args) {
-        int numero = 5;
-
-        System.out.println("Tabuada do " + numero + ":");
+        Logger logger = Logger.getLogger(Tabuada.class.getName());
 
         for (int i = 1; i <= 10; i++) {
-            int resultado = numero * i;
-            System.out.println(numero + " x " + i + " = " + resultado);
+            logger.info("Tabuada do {}: ");
+            for (int j = 1; j <= 10; j++) {
+                logger.info("{} x {} = {}");
+            }
         }
-    }
+ }
 }

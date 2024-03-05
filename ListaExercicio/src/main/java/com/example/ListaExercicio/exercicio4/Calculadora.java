@@ -9,24 +9,23 @@ public class Calculadora {
     private static final Logger logger = LoggerFactory.getLogger(Calculadora.class);
 
     public static void main(String[] args) {
+
         try (Scanner scanner = new Scanner(System.in)) {
-            logger.info("Calculadora Simples");
-            logger.info("1. Soma");
-            logger.info("2. Subtração");
-            logger.info("3. Multiplicação");
-            logger.info("4. Divisão");
-
-            logger.info("Escolha a operação (1-4): ");
-            int escolha = scanner.nextInt();
-
-            logger.info("Digite o primeiro número: ");
+            logger.info("Digite o primeiro numero: ");
             double num1 = scanner.nextDouble();
 
-            logger.info("Digite o segundo número: ");
+            logger.info("Digite o segundo numero: ");
             double num2 = scanner.nextDouble();
 
-            String resultado = calcular(escolha, num1, num2);
+            logger.info("Escolha a operação: ");
+            
+            logger.info("1 - Soma");
+            logger.info("2 - Subtracao");
+            logger.info("3 - Multiplicacao");
+            logger.info("4 - Divisao");
+            int escolha = scanner.nextInt();
 
+            String resultado = calcular(escolha, num1, num2);
             logger.info("Resultado: {}", resultado);
         }
     }
@@ -55,6 +54,6 @@ public class Calculadora {
                 return "Escolha inválida.";
         }
 
-        return Double.toString(resultado);
+        return String.valueOf(resultado);
     }
 }
