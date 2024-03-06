@@ -16,41 +16,41 @@ public class Menu {
     }
 
     public void controlaMenu() {
-        Scanner scanner = new Scanner(System.in);
+        try(Scanner scanner = new Scanner(System.in)){
+         
+            int escolha;
+            do {
+                logger.info("Escolha uma opção: ");
+                
+                logger.info("Menu Principal ");
+                logger.info("1- Mostrar Estoque");
+                logger.info("2- Fazer Pedido");
+                logger.info("3- Sair");
+                
 
-        int escolha;
-        do {
-            logger.info("===== Menu Principal =====");
-            logger.info("1. Mostrar Estoque");
-            logger.info("2. Fazer Pedido");
-            logger.info("3. Sair");
-            logger.info("Escolha uma opção: ");
+                escolha = scanner.nextInt();
+                scanner.nextLine();
 
-            escolha = scanner.nextInt();
-            scanner.nextLine();
-
-            switch (escolha) {
-                case 1:
-                    mostraEstoque();
-                    break;
-                case 2:
-                    fazerPedido();
-                    break;
-                case 3:
-                    logger.info("Saindo do programa.");
-                    break;
-                default:
-                    logger.info("Opção inválida. Tente novamente.");
-            }
-        } while (escolha != 3);
-
-        scanner.close();
+                switch (escolha) {
+                    case 1:
+                        mostraEstoque();
+                        break;
+                    case 2:
+                        fazerPedido();
+                        break;
+                    case 3:
+                        logger.info("Saindo do programa");
+                        break;
+                    default:
+                        logger.info("Opcao invalida");
+                }
+            } while (escolha != 3);
+        }
     }
-
     public void fazerPedido() {
-        Scanner scanner = new Scanner(System.in);
-
-        logger.info("===== Fazer Pedido =====");
+        
+        try(Scanner scanner = new Scanner(System.in)){
+        logger.info("Fazer Pedido: ");
 
         while (true) {
             logger.info("Digite o ID do produto ou 0 para encerrar o pedido: ");
@@ -69,19 +69,19 @@ public class Menu {
                 scanner.nextLine();
 
                 if (pedido.adicionarItemNaLista(produto, quantidade)) {
-                    logger.info("Item adicionado ao pedido.");
+                    logger.info("Item adicionado ao pedido");
                 } else {
-                    logger.info("Quantidade indisponível no estoque.");
+                    logger.info("Quantidade indisponivel no estoque");
                 }
             } else {
-                logger.info("Produto não encontrado no estoque.");
+                logger.info("Produto nao encontrado no estoque");
             }
         }
 
-        logger.info("===== Resumo do Pedido =====");
+        logger.info( "Resumo do Pedido");
         pedido.imprimirPedido();
 
-        scanner.close(); 
+        }
     }
 
     public void mostraEstoque() {

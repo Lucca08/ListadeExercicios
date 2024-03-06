@@ -23,10 +23,10 @@ public class CalculoMediaTest {
     @Test
     public void testVerificarStatus() {
         assertEquals("Aprovado", CalculoMedia.verificarStatus(7.5));
-        assertEquals("Verificação Suplementar", CalculoMedia.verificarStatus(5.0));
+        assertEquals("Verificacao Suplementar", CalculoMedia.verificarStatus(5.0));
         assertEquals("Reprovado", CalculoMedia.verificarStatus(3.5));
         assertEquals("Aprovado", CalculoMedia.verificarStatus(8.5));
-        assertEquals("Verificação Suplementar", CalculoMedia.verificarStatus(4.5));
+        assertEquals("Verificacao Suplementar", CalculoMedia.verificarStatus(4.5));
         assertEquals("Reprovado", CalculoMedia.verificarStatus(2.0));
     }
 

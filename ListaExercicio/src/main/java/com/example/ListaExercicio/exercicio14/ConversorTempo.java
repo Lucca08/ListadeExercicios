@@ -36,7 +36,7 @@ public class ConversorTempo {
     }
 
     public static void exibirResultado(int horas, int minutos, int segundos) {
-        logger.info("O tempo é: {}h {}min {}s", horas, minutos, segundos);
+        logger.info("O tempo e: {}h {}min {}s", horas, minutos, segundos);
     }
 
     public static String escritaTempoFormatado(int horas, int minutos, int segundos) {

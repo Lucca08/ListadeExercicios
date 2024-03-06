@@ -47,11 +47,11 @@ public class Calculadora {
                 if (num2 != 0) {
                     resultado = num1 / num2;
                 } else {
-                    return "Não é possível dividir por zero.";
+                    return "Nao e possivel dividir por zero";
                 }
                 break;
             default:
-                return "Escolha inválida.";
+                return "Escolha invalida";
         }
 
         return String.valueOf(resultado);

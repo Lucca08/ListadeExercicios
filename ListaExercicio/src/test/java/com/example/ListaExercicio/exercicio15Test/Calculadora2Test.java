@@ -30,7 +30,7 @@ public class Calculadora2Test {
 
     @Test
     public void testDividirPorZero() {
-        assertEquals("Não é possível dividir por zero.", Calculadora2.dividir(6.0, 0.0));
+        assertEquals("Nao e possivel dividir por zero", Calculadora2.dividir(6.0, 0.0));
     }
 
     @Test
@@ -55,11 +55,11 @@ public class Calculadora2Test {
 
     @Test
     public void testCalcularDivisaoPorZero() {
-        assertEquals("Não é possível dividir por zero.", Calculadora2.calcular(4, 6.0, 0.0));
+        assertEquals("Nao e possivel dividir por zero", Calculadora2.calcular(4, 6.0, 0.0));
     }
 
     @Test
     public void testCalcularEscolhaInvalida() {
-        assertEquals("Escolha inválida.", Calculadora2.calcular(6, 6.0, 3.0));
+        assertEquals("Escolha Invalida", Calculadora2.calcular(6, 6.0, 3.0));
     }
 }

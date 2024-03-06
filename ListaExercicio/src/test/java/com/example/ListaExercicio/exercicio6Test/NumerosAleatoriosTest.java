@@ -26,7 +26,7 @@ public class NumerosAleatoriosTest {
         int[] numeros = {15, 28, 45, 73, 60, 92, 7, 36, 84, 2};
         String resultado = numerosAleatorios.exibirNumeros(numeros);
 
-        assertEquals("Números aleatórios: 15 28 45 73 60 92 7 36 84 2 ", resultado);
+        assertEquals("Numeros aleatorios: 15 28 45 73 60 92 7 36 84 2 ", resultado);
     }
 
     @Test

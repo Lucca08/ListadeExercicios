@@ -8,7 +8,7 @@ public class SomaDiagonalPrincipal {
     private static final Logger logger = LoggerFactory.getLogger(SomaDiagonalPrincipal.class);
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try(Scanner scanner = new Scanner(System.in)) {
 
         logger.info("Digite a ordem da matriz quadrada: ");
         int ordem = scanner.nextInt();
@@ -23,11 +23,12 @@ public class SomaDiagonalPrincipal {
             }
         }
 
-        scanner.close();
 
         int somaDiagonalPrincipal = calcularSomaDiagonalPrincipal(matriz);
-
-        logger.info("A soma dos elementos da diagonal principal é: {}", somaDiagonalPrincipal);
+    
+        logger.info("A soma dos elementos da diagonal principal e: {}", somaDiagonalPrincipal);
+    
+    }
     }
 
     public static int calcularSomaDiagonalPrincipal(int[][] matriz) {

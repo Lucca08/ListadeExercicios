@@ -10,7 +10,7 @@ public class CalculoMedia {
         double[] notas = {8.0, 7.5, 9.0, 6.5};
         double media = calcularMedia(notas);
         String status = verificarStatus(media);
-        logger.info("A média das notas é: {}", media);
+        logger.info("A media das notas e: {}", media);
         logger.info("Status: {}", status);
     }
 
@@ -31,7 +31,7 @@ public class CalculoMedia {
         if (media >= 6.0) {
             return "Aprovado";
         } else if (media >= 4.0) {
-            return "Verificação Suplementar";
+            return "Verificacao Suplementar";
         } else {
             return "Reprovado";
         }

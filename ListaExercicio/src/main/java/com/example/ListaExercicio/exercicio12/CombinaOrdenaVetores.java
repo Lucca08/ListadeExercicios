@@ -1,18 +1,16 @@
 package com.example.ListaExercicio.exercicio12;
 import java.util.Arrays;
 
+import com.example.ListaExercicio.exercicio11.OrdenarVetor;
+
 public class CombinaOrdenaVetores {
 
     public static int[] combinarOrdenarVetores(int[] vetor1, int[] vetor2) {
 
-        ordenarVetor(vetor1);
-        Arrays.sort(vetor2);
-
         int[] vetorCombinado = combinarVetores(vetor1, vetor2);
-
-        Arrays.sort(vetorCombinado);
-
+        OrdenarVetor.ordenarVetor(vetorCombinado);
         return vetorCombinado;
+        
     }
 
     private static int[] combinarVetores(int[] vetor1, int[] vetor2) {
@@ -25,17 +23,4 @@ public class CombinaOrdenaVetores {
         return vetorCombinado;
     }
 
-    public static void ordenarVetor(int[] vetor) {
-        int n = vetor.length;
-
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-                if (vetor[j] > vetor[j + 1]) {
-                    int temp = vetor[j];
-                    vetor[j] = vetor[j + 1];
-                    vetor[j + 1] = temp;
-                }
-            }
-        }
-    }
 }

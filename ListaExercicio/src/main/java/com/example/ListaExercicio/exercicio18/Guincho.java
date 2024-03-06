@@ -8,7 +8,7 @@ public class Guincho {
 
     public void rebocar(Automovel automovel) {
         if (automovel.isLigado()) {
-            logger.info("Nao e possível rebocar o veículo enquanto estiver ligado, Desligue-o e tente novamente");
+            logger.info("Nao e possível rebocar o veículo enquanto estiver ligadoe");
         } else {
             logger.info("O veiculo foi rebocado com sucesso");
         }

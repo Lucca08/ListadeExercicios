@@ -13,7 +13,7 @@ public class JokenpoGame {
     public static String jogar(Opcao escolhaJogador) {
         Opcao escolhaMaquina = gerarEscolhaAleatoria();
         String resultado = calcularResultado(escolhaJogador, escolhaMaquina);
-        return "Jogador escolheu " + escolhaJogador + "\nMáquina escolheu " + escolhaMaquina + "\nResultado: " + resultado;
+        return "Jogador escolheu " + escolhaJogador + "\nMaquina escolheu " + escolhaMaquina + "\nResultado: " + resultado;
     }
 
     public static Opcao gerarEscolhaAleatoria() {
@@ -29,7 +29,7 @@ public class JokenpoGame {
         { 
             return "Jogador venceu";
         } else { 
-            return "Máquina venceu";
+            return "Maquina venceu";
         }
     }
 }

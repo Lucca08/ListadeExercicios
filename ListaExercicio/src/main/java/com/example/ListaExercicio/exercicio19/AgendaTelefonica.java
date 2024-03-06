@@ -52,12 +52,15 @@ public class AgendaTelefonica {
         boolean shouldExit = false;
 
         while (!shouldExit) {
-            logger.info("1. Adicionar Contato");
-            logger.info("2. Deletar Contato");
-            logger.info("3. Buscar Contato");
-            logger.info("4. Exibir Contatos");
-            logger.info("5. Sair");
+            
             logger.info("Escolha uma opção: ");
+            
+            logger.info("1 - Adicionar Contato");
+            logger.info("2 - Deletar Contato");
+            logger.info("3 - Buscar Contato");
+            logger.info("4 - Exibir Contatos");
+            logger.info("5 - Sair");
+            
 
             int escolha = scanner.nextInt();
             scanner.nextLine();
@@ -66,7 +69,7 @@ public class AgendaTelefonica {
                 case 1:
                     logger.info("Digite o nome do contato: ");
                     String nomeAdicionar = scanner.nextLine();
-                    logger.info("Digite o número do contato: ");
+                    logger.info("Digite o numero do contato: ");
                     String numeroAdicionar = scanner.nextLine();
                     agenda.adicionarContato(nomeAdicionar, numeroAdicionar);
                     break;
@@ -89,7 +92,7 @@ public class AgendaTelefonica {
                     shouldExit = true;
                     break;
                 default:
-                    logger.info("Opção inválida. Tente novamente.");
+                    logger.info("Opcao invalida");
                     break;
             }
         }

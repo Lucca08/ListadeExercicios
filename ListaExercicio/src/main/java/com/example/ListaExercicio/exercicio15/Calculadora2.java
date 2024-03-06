@@ -1,7 +1,7 @@
 package com.example.ListaExercicio.exercicio15;
 public class Calculadora2 {
 
-    private static final String DIVISAO_POR_ZERO = "Não é possível dividir por zero.";
+    private static final String DivisaoPorZero = "Nao e possivel dividir por zero";
 
     public static Object calcular(int escolha, double num1, double num2) {
         Object resultado = 0;
@@ -20,7 +20,7 @@ public class Calculadora2 {
                 resultado = dividir(num1, num2);
                 break;
             default:
-                return "Escolha inválida.";
+                return "Escolha Invalida";
         }
     
         return resultado;
@@ -43,7 +43,7 @@ public class Calculadora2 {
         if (num2 != 0) {
             return num1 / num2;
         } else {
-            return DIVISAO_POR_ZERO;
+            return DivisaoPorZero;
         }
     }
     

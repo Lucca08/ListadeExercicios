@@ -33,7 +33,7 @@ public class Livro {
             disponivel = false;
         } else {
             Logger logger = LoggerFactory.getLogger(Livro.class);
-            logger.info("Livro indisponível");
+            logger.info("Livro indisponivel");
         }
     }
 
@@ -42,7 +42,7 @@ public class Livro {
             disponivel = true;
         } else {
             Logger logger = LoggerFactory.getLogger(Livro.class);
-            logger.info("Livro já disponível");
+            logger.info("Livro ja disponivel");
         }
     }
 }

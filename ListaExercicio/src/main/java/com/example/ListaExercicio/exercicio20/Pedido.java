@@ -56,32 +56,27 @@ public class Pedido {
     }
 
     public void adicionarItem() {
-        Scanner scanner = new Scanner(System.in);
-
-        try {
+        Logger logger = LoggerFactory.getLogger(Pedido.class);
+        try (Scanner scanner = new Scanner(System.in)) {
             logger.info("Digite o ID do produto: ");
             int idProduto = scanner.nextInt();
             scanner.nextLine();
-
+        
             Estoque estoque = new Estoque();
-
+        
             Produto produto = estoque.encontrarProduto(idProduto);
-
+        
             if (produto != null) {
                 logger.info("Digite a quantidade desejada: ");
                 int quantidade = scanner.nextInt();
                 scanner.nextLine();
-
+        
                 adicionarItemNaLista(produto, quantidade);
             } else {
                 logger.info("Produto não encontrado no estoque.");
             }
         } catch (Exception e) {
-            logger.error("Erro ao processar entrada do usuário.", e);
-        } finally {
-            if (scanner != null) {
-                scanner.close();
-            }
+            logger.error("Erro ao processar entrada do usuario.", e);
         }
     }
 
@@ -108,7 +103,7 @@ public class Pedido {
             logger.info("Digite a quantidade desejada: ");
             return scanner.nextInt();
         } catch (Exception e) {
-            logger.error("Erro ao processar entrada do usuário.", e);
+            logger.error("Erro ao processar entrada do usuario", e);
             return 0;
         } finally {
             if (scanner != null) {
